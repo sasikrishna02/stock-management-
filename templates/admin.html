@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    h2 {
+        margin-bottom: 20px;
+    }
+
+    button {
+        padding: 10px 20px;
+        margin: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        text-decoration: none;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+</style>
+</head>
+<body>
+<form action="/admin" method="GET">
+    <div class="container">
+        <h2>Welcome to Stock Management System</h2>
+        <a href="/stock_update"><button type="button">Stock Update</button></a>
+        <a href="/view_stock"><button type="button">View Stock</button></a>
+        <a href="/customer_seller"><button type="button">Customer/Seller</button></a>
+        <a href="/employee"><button type="button">New employee</button></a>
+        <a href="/billing"><button type="button">Billing</button></a>
+
+        
+    </div>
+</form>
+</body>
+</html>

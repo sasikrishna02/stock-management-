@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Details</title>
+    <style>
+        /* Body styles */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Container styles */
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Heading styles */
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+
+        /* Order table styles */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        /* Button styles */
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Order Details</h1>
+        <table>
+            <tr>
+                <th>Field</th>
+                <th>Value</th>
+            </tr>
+            <tr>
+                <td>Order ID</td>
+                <td>{{ order['order_id'] }}</td>
+            </tr>
+            <tr>
+                <td>Product Name</td>
+                <td>{{ order['name'] }}</td>
+            </tr>
+            <tr>
+                <td>Quantity</td>
+                <td>{{ order['qty'] }}</td>
+            </tr>
+            <tr>
+                <td>Unit Price</td>
+                <td>{{ order['price'] }}</td>
+            </tr>
+            <tr>
+                <td>Discount</td>
+                <td>{{ order['discount'] }}</td>
+            </tr>
+            <tr>
+                <td>Customer ID</td>
+                <td>{{ order['customer_id'] }}</td>
+            </tr>
+            <tr>
+                <td>Info ID</td>
+                <td>{{ order['info_id'] }}</td>
+            </tr>
+            <tr>
+                <td>Stock ID</td>
+                <td>{{ order['stock_id'] }}</td>
+            </tr>
+            <tr>
+                <td>Manufacture Date</td>
+                <td>{{ order['mfd'] }}</td>
+            </tr>
+            <tr>
+                <td>Expiry Date</td>
+                <td>{{ order['exp'] }}</td>
+            </tr>
+            <tr>
+                <td>Customer Name</td>
+                <td>{{ order['customer_name'] }}</td>
+            </tr>
+            <tr>
+                <td>Phone</td>
+                <td>{{ order['phone'] }}</td>
+            </tr>
+            <tr>
+                <td>Email</td>
+                <td>{{ order['email'] }}</td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td>{{ order['address'] }}</td>
+            </tr>
+            <tr>
+                <td>State</td>
+                <td>{{ order['state'] }}</td>
+            </tr>
+            <tr>
+                <td>City</td>
+                <td>{{ order['city'] }}</td>
+            </tr>
+            <tr>
+                <td>Order Time</td>
+                <td>{{ order['order_time'] }}</td>
+            </tr>
+            <tr>
+                <td>Employee ID</td>
+                <td>{{ order['emp_id'] }}</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

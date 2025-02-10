@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Search Product</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        max-width: 500px;
+        margin: 20px auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    input[type="text"] {
+        width: calc(100% - 70px);
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    button[type="submit"],
+    button[type="button"] {
+        width: 100px;
+        padding: 10px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    button[type="submit"]:hover,
+    button[type="button"]:hover {
+        background-color: #45a049;
+    }
+
+    #searchResults {
+        margin-top: 20px;
+    }
+
+    #searchResults p {
+        margin-bottom: 10px;
+    }
+
+    #searchResults strong {
+        font-weight: bold;
+    }
+    .search-button{
+        margin-top: 5%;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Search Product</h2>
+    
+    <!-- Form to input SNO and search for product -->
+    <form id="searchForm" onsubmit="searchProduct(); return false;">
+        <label for="snoInput">Enter SNO:</label>
+        <input type="text" id="snoInput" name="sno">
+        <button type="submit" class="search-button">Search</button>
+
+        <a href="/view_stock"><button type="button">Main Menu</button></a>
+    </form>
+    
+    <!-- Display area for search results -->
+    <div id="searchResults"></div>
+</div>
+
+<script>
+    // Function to send AJAX request to search for product
+    function searchProduct() {
+        var sno = document.getElementById('snoInput').value;
+
+        // Send AJAX request to Flask server to search for product by SNO
+        fetch('/search?sno=' + sno)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log(data);
+            if (data.error) {
+                // Display error message if product not found
+                document.getElementById('searchResults').innerText = data.error;
+            } else {
+                // Display product information in searchResults div
+                document.getElementById('searchResults').innerHTML = `
+                    <p><strong>Name:</strong> ${data.name}</p>
+                    <p><strong>Type:</strong> ${data.type}</p>
+                    <p><strong>Price:</strong> ${data.price}</p>
+                    <p><strong>Quantity:</strong> ${data.qty}</p>
+                    <p><strong>Manufacture Date:</strong> ${data.mfd}</p>
+                    <p><strong>Expiry Date:</strong> ${data.exp}</p>
+                `;
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            // Display error message if there's a problem with the request
+            document.getElementById('searchResults').innerText = 'Error searching for product.';
+        });
+    }
+</script>
+
+</body>
+</html>

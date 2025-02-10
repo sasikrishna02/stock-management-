@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Stock</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color:  #45a049;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>View Stock</h2>
+    
+    <!-- Buttons for different actions -->
+    <a href="/less_stock"><button>Less Stock</button></a>
+    <a href="/alter_stock"><button>Alter Stock</button></a>
+    <a href="/search_product"><button>Search Product</button></a>
+    
+
+    <!-- Table to display stock details -->
+    <table border="1">
+        <thead>
+            <tr>
+                <th>S.no</th>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Price</th>
+                <th>Qty</th>
+                <th>Mfd</th>
+                <th>Exp</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in stock_list %}
+            <tr>
+                <td>{{ item.sno }}</td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.type }}</td>
+                <td>{{ item.price }}</td>
+                <td>{{ item.qty }}</td>
+                <td>{{ item.mfd }}</td>
+                <td>{{ item.exp }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+</div>
+
+<script>
+    function showLessStock() {
+        // Logic to show less stock items goes here
+    }
+    
+    function showAlterStock() {
+        // Logic to show alter stock items goes here
+    }
+    
+    function showSearchProduct() {
+        // Logic to show search product goes here
+    }
+</script>
+
+</body>
+</html>

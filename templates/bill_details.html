@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Details</title>
+</head>
+<body>
+    <h1>Bill Details</h1>
+    <div>
+        <h2>Order Details</h2>
+        <p><strong>Order ID:</strong> {{ order_data['order_id'] }}</p>
+        <p><strong>Name:</strong> {{ order_data['name'] }}</p>
+        <p><strong>Price:</strong> {{ order_data['price'] }}</p>
+        <p><strong>Quantity:</strong> {{ order_data['qty'] }}</p>
+        <p><strong>MFD:</strong> {{ order_data['mfd'] }}</p>
+        <p><strong>EXP:</strong> {{ order_data['exp'] }}</p>
+        <!-- Add more fields as needed -->
+    </div>
+    <div>
+        <h2>Customer Details</h2>
+        <p><strong>Customer ID:</strong> {{ order_data['customer_id'] }}</p>
+        <p><strong>Customer Name:</strong> {{ order_data['customer_name'] }}</p>
+        <p><strong>Phone:</strong> {{ order_data['phone'] }}</p>
+        <p><strong>Email:</strong> {{ order_data['email'] }}</p>
+        <p><strong>Address:</strong> {{ order_data['address'] }}</p>
+        <p><strong>State:</strong> {{ order_data['state'] }}</p>
+        <p><strong>City:</strong> {{ order_data['city'] }}</p>
+        <!-- Add more fields as needed -->
+    </div>
+    <div>
+        <h2>Payment Details</h2>
+        <p><strong>Total Amount:</strong> {{ total_amount }}</p>
+        <p><strong>Discount:</strong> {{ discount }}%</p>
+        <p><strong>Payment Method:</strong> {{ payment_method }}</p>
+        <p><strong>Transaction ID:</strong> {{ transaction_id }}</p>
+        <!-- Add more fields as needed -->
+    </div>
+</body>
+</html>

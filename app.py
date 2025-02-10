@@ -19,7 +19,7 @@ db_config = {
     'host': 'localhost',
     'port': 33020,
     'user': 'root',
-    'password': '1234@',
+    'password': 'password ',
     'database': 'inventory'
 }
 
